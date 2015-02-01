@@ -1,0 +1,101 @@
+.template{
+    display: none;
+}
+.logo-image{
+    float: left;
+    height: 39px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+.center{
+    text-align: center;
+}
+.red{
+    color: rgb(240, 14, 5);
+}
+.table-btn{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+
+
+.driver-block{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.driver-avatar{
+    width: 100px;
+    border-radius: 5px;
+}
+.driver-photos{
+    float: left;
+    width: 130px;
+}
+.driver-info{
+    margin-left: 120px;
+    overflow: hidden;
+}
+.cars-photos img{
+    height: 120px;
+    margin: 2px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.cars {
+    margin-left: 120px;
+}
+.trigger{
+    float: right;
+    cursor: pointer;
+    margin-top: -24px;
+    font-size: 20px;
+    color: rgb(2, 141, 192);
+}
+.trigger-block{
+    display: none;
+}
+.driver-info .btn-group-vertical{
+    float: right;
+}
+.driver-info  .btn-group-vertical > button{
+    padding: 4px 8px;
+    font-size: 20px;
+}
+.well{
+    padding: 12px;
+}
+.fa-check{
+    color: rgb(5, 190, 5);
+}
+.btn-group-vertical>button.fa-check:focus{
+    color: rgb(5, 190, 5);
+}
+.btn-group-vertical>button.fa-ban:focus{
+    color: red;
+}
+.fa-ban{
+    color: red;
+}
+.gray{
+    color: #d2d2d2;
+}
+.blue{
+    color: royalblue;
+}
+.verification-photo{
+    width: 270px;
+    vertical-align: top;
+    border-radius: 5px;
+}

@@ -1,0 +1,29 @@
+.template{
+    display: none;
+}
+.logo-image{
+    float: left;
+    height: 39px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+.center{
+    text-align: center;
+}
+.red{
+    color: rgb(240, 14, 5);
+}
+.table-btn{
+    font-size: 18px;
+    margin-left: 5px;
+}

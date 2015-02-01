@@ -1,0 +1,47 @@
+body,html{
+    height: 100%;
+}
+
+.title-bar{
+    position: fixed;
+}
+
+.content-bar{
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    left: 300px;
+}
+
+.list-bar{
+    position: fixed;
+    top: 70px;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    overflow: scroll;
+    padding: 10px;
+}
+
+.tab-pane{
+    padding: 10px;
+}
+#home{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    top: 40px;
+    left: 0px;
+}
+.car-ava{
+    max-height: 100px;
+}
+.car-cont{
+    overflow-y: scroll;
+    position: fixed;
+    right: 10px;
+    left: 313px;
+    bottom: 10px;
+    top: 210px;
+}

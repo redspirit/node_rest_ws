@@ -1,0 +1,299 @@
+.template{
+    display: none;
+}
+.logo-image{
+    float: left;
+    height: 39px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+.center{
+    text-align: center;
+}
+.order-field{
+    width: 250px;
+}
+.operation-success{
+    font-style: italic;
+    color: royalblue;
+}
+input.error {
+    border: 1px solid red;
+    background: rgb(255, 229, 229);
+}
+.orderSel{
+    color: rgb(219, 18, 99);
+}
+#driver-status{
+    padding: 5px 30px;
+    float: right;
+    border: 1px solid darkslategray;
+    cursor: pointer;
+    margin-top: -33px;
+}
+#driver-status:hover{
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+}
+.statusColor{
+    background-color: indianred;
+    color: white;
+}
+.driver-voiced{
+
+}
+.userpic{
+    position: absolute;
+    top: 8px;
+    left: -7px;
+    width: 36px;
+    margin-left: 15px;
+}
+.uploaded-image{
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+}
+.upload-block{
+    overflow: hidden;
+    margin: 5px;
+}
+
+.save-indicator{
+    color: orangered;
+    opacity: 0;
+}
+.delete-link{
+    float: right;
+}
+.right-panel{
+    width: 410px;
+    position: absolute;
+    overflow: hidden;
+    padding-left: 5px;
+    top: 100px;
+    left: 50%;
+    margin-left: 100px;
+}
+.right-panel img{
+    width: 400px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.right-panel img:hover{
+    box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+}
+.selectedRow{
+    background-color: lightgray;
+}
+.prev-image{
+    cursor: pointer;
+}
+.popup-image{
+    display: none;
+    position: absolute;
+    width: 400px;
+    box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    left: 200px;
+    top: 200px;
+    background-color: white;
+}
+.popup-image img{
+    width: 400px;
+}
+table.cls-table{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table.cls-table td{
+    padding: 1px 5px;
+}
+p.bg-warning{
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #C9E9FC;
+}
+.info-table td {
+    padding: 3px 5px;
+    font-size: 16px;
+}
+.tb-bold{
+    font-weight: bold;
+
+}
+.info-table{
+    margin-bottom: 10px;
+}
+.info-pics{
+    width: 350px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.info-pics:hover{
+    box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+}
+
+.info-photo{
+    height: 270px;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.75);
+}
+.thumbs-up{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -100px;
+    color: rgb(11, 80, 202);
+}
+.subclassSel{
+    background-color: indianred;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.tag-selector{
+    padding: 3px 8px;
+    cursor: pointer;
+}
+.my-form{
+    width: 500px;
+}
+.my-form .col-sm-10{
+    margin-bottom: 8px;
+}
+.my-form label{
+    font-size: 120%;
+}
+.container {
+    font-size: 110%;
+}
+.control-label{
+    margin-top: 5px;
+}
+.profile-view-avatar{
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+}
+.addr-row{
+    padding: 5px;
+}
+.addr-row span{
+    font-weight: bold;
+    float: left;
+    margin-top: 6px;
+    font-size: 20px;
+}
+.addr-row input{
+    width: 363px;
+    margin-left: 210px;
+}
+.time-block{
+
+}
+.time-block input{
+    width: 200px;
+    display: inline;
+}
+.form-row input{
+    width: 80px;
+    display: inline;
+}
+.form-row span {
+
+}
+div.addr-row .add-address{
+    position: absolute;
+    left: 50%;
+    margin-left: 35px;
+    margin-top: -34px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(36, 150, 36);
+}
+div.addr-row .del-address{
+    position: absolute;
+    left: 50%;
+    margin-left: 35px;
+    margin-top: -34px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(221, 40, 40);
+}
+.order-map{
+    width: 475px;
+    float: right;
+}
+.order-map .well{
+    margin-top: 10px;
+}
+#map{
+    width: 475px;
+    height: 350px;
+}
+.has-error span{
+    color: rgb(221, 40, 40);
+}
+.create-cantainer{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.create-cantainer input{
+    width: 400px;
+    font-size: 200%;
+}
+.car-item{
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+    height: 122px;
+}
+.car-item img{
+    float: left;
+    height: 100px;
+    margin: 5px;
+    margin-right: 15px;
+}
+.car-item h3{
+    margin-top: 8px;
+}
+.car-item .btn-danger{
+    margin-top: 80px;
+}
+.car-item.active{
+    background-color: rgb(232, 249, 255);
+}
+.add-car-button{
+    position: absolute;
+    left: 50%;
+    margin-left: 382px;
+}
+body{
+    padding-bottom: 20px;
+}
+.tab-content{
+    padding: 10px 0;
+}
+.driver-avatar{
+    height: 80px;
+}
+.btn-sm span{
+    font-weight: bold;
+    font-size: 200%;
+}
+.btn-sm{
+    margin: 5px;
+}
