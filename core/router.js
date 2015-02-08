@@ -18,60 +18,84 @@ files.forEach(function(file){
 });
 
 
-exports.httpRouting = function(server, aliases, staticServer) {
+exports.httpRouting = function(server, httpRoutes, staticServer) {
 
-    /*
-    for(var key in routes) {
-        var parts1 = key.split(' ');
-        var parts2 = routes[key].split('.');
-
-        if(typeof Controllers[parts2[0]] != 'object') {
-            console.error('Контроллер не найден', parts2[0]);
-            continue;
-        }
-        if(typeof Controllers[parts2[0]][parts2[1]] != 'function') {
-            console.error('Не найден метод', parts2[1], 'в контроллере', parts2[0]);
-            continue;
-        }
-
-        if(parts1[0] == 'get') server.get(parts1[1], Controllers[parts2[0]][parts2[1]]);
-        if(parts1[0] == 'post') server.post(parts1[1], Controllers[parts2[0]][parts2[1]]);
-        if(parts1[0] == 'put') server.put(parts1[1], Controllers[parts2[0]][parts2[1]]);
-        if(parts1[0] == 'del') server.del(parts1[1], Controllers[parts2[0]][parts2[1]]);
-
-    }
-    */
 
     var httpHandler = function(req, res, next){
 
-        var path = req._url.pathname.substr(config.url_prefix.length);
-        var seg = path.split('/');
-        var ctrl = seg[1];
-        var func = seg[2];
+        var ctrl, action, cmdParts;
+        var routePath = req.route.path;
         var method = req.method.toLowerCase();
+        var cmd = httpRoutes[method + ' ' + routePath] || httpRoutes['all ' + routePath];
 
-        if(!ctrl || !func)
+        console.log('params', cmd);
+        //console.log('query', req);
+
+
+
+        if(!cmd)
             return staticServer(req, res, next);
+
+
+        cmdParts = cmd.split('.');
+
+
+        if(cmdParts.length != 2)
+            return staticServer(req, res, next);
+
+
+        if(cmdParts[0][0] == ':') {
+            ctrl = req.params[cmdParts[0].substr(1)];
+            if(!ctrl) ctrl = cmdParts[0].substr(1);
+        } else {
+            ctrl = cmdParts[0];
+        }
+
+        if(cmdParts[1][0] == ':') {
+            action = req.params[cmdParts[1].substr(1)];
+            if(!action) action = cmdParts[1].substr(1);
+        } else {
+            action = cmdParts[1];
+        }
+
+
+        console.log(ctrl, action);
+
 
         if(typeof Controllers[ctrl] != 'object')
             return staticServer(req, res, next);
 
-        if(typeof Controllers[ctrl][func + '_' + method] != 'function')
+        if(typeof Controllers[ctrl][action] != 'function')
             return staticServer(req, res, next);
 
 
-        req.urlParams = seg.splice(3,99);
-        return Controllers[ctrl][func + '_' + method](req, res);
+        return Controllers[ctrl][action](req, res);
+
 
     };
 
-    var escapedUrl = config.url_prefix.replace('/', '\/');
-    var reg = new RegExp('(' + escapedUrl + ').*', 'g');
 
-    server.get(reg, httpHandler);
-    server.post(reg, httpHandler);
-    server.put(reg, httpHandler);
-    server.del(reg, httpHandler);
-    server.patch(reg, httpHandler);
+
+     for(var key in httpRoutes) {
+         var parts = key.split(' ');
+         var cmd = httpRoutes[key];
+
+         if(parts[0] == 'get') server.get(parts[1], httpHandler);
+         if(parts[0] == 'post') server.post(parts[1], httpHandler);
+         if(parts[0] == 'put') server.put(parts[1], httpHandler);
+         if(parts[0] == 'del') server.del(parts[1], httpHandler);
+         if(parts[0] == 'del') server.patch(parts[1], httpHandler);
+         if(parts[0] == 'all') {
+             server.get(parts[1], httpHandler);
+             server.post(parts[1], httpHandler);
+             server.put(parts[1], httpHandler);
+             server.del(parts[1], httpHandler);
+             server.patch(parts[1], httpHandler);
+         }
+
+     }
+
+
+
 
 };

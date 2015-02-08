@@ -3,7 +3,6 @@
     "ws_port": 8123,
     "public_path": "/public",
     "file_cache" : 0,
-    "url_prefix" : "",
     "mongo": {
         "server": "localhost",
         "port": "27017",

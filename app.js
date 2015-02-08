@@ -5,8 +5,10 @@
 var server = require('./core/server.js');
 
 var routes = {
-    'get /api/register':                   'auth.register',
-    'get /api/auth':                       'auth.getToken'
+    'get /registerz':                   'auth.register',
+    'get /authz':                       'auth.getToken',
+
+    'all /api/:controller/:action':    ':controller.:action'
 };
 
 var ws_routes = {

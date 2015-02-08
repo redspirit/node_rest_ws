@@ -3,7 +3,7 @@
  */
 
 
-exports.register_get = function(req, res){
+exports.register = function(req, res){
 
     res.send('this is me register GEEET!!!');
 

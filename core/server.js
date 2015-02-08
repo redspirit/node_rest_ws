@@ -26,9 +26,9 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
 
-exports.Start = function(aliases, wsRoutes){
+exports.Start = function(httpRoutes, wsRoutes){
 
-    router.httpRouting(server, aliases, restify.serveStatic({
+    router.httpRouting(server, httpRoutes, restify.serveStatic({
         directory: __dirname + '/..' + config.public_path,
         default: 'index.html',
         maxAge: config.file_cache
