@@ -58,6 +58,12 @@ exports.httpRouting = function(server, httpRoutes, staticServer) {
             action = cmdParts[1];
         }
 
+        if(cmdParts[2] == '>') {
+
+            // предписание передать управление, но как?
+
+        }
+
 
         console.log(ctrl, action);
 
@@ -69,8 +75,7 @@ exports.httpRouting = function(server, httpRoutes, staticServer) {
             return staticServer(req, res, next);
 
 
-        return Controllers[ctrl][action](req, res);
-
+        return Controllers[ctrl][action](req, res, next);
 
     };
 

@@ -4,9 +4,16 @@
 
 var server = require('./core/server.js');
 
+
+// todo
+// в комманде роутера появляется .> - значит, что этот контроллер передает упрввление дальше по спису next()
+// для использования в качестве медиатора
+
+
+
 var routes = {
-    'get /registerz':                   'auth.register',
-    'get /authz':                       'auth.getToken',
+    'get /registerz':                   'auth.register.>',
+    'get /authz':                       'auth.getToken.>',
 
     'all /api/:controller/:action':    ':controller.:action'
 };
